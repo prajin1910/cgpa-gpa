@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>GPA/CGPA Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #3a3a3a, #3a3a3a);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      text-align: center;
+      color: #f8f8f8;
+    }
+
+    .author-info {
+      text-align: center;
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+
+    .author-info a {
+      color: #00b0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .author-info a:hover {
+      color: #008c99;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+    }
+
+    .social-icons a {
+      color: #00b0ff;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #008c99;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    footer {
+      background-color: #282828;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      margin-top: 70px;
+    }
+
+    footer .social-icons {
+      margin: 10px 0;
+    }
+
+    footer .social-icons a {
+      color: #00b0ff;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: #008c99;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    /* Fading in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Apply fade-in to the body */
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+      opacity: 1;
+    }
+
+    /* Button Styles */
+    .button-container {
+      text-align: center;
+      margin: 40px 0 20px 0; /* Adjusted margin to place the buttons down */
+    }
+
+    .gpa-btn, .cgpa-btn {
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: white;
+      color: #333;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      width: 50%; /* Ensures buttons are wider */
+      margin-top: 80px;
+      }
+
+    .gpa-btn:hover, .cgpa-btn:hover {
+      background-color: #bfc0cd;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .author-info {
+        font-size: 0.9rem;
+      }
+
+      .social-icons a {
+        font-size: 1.2rem;
+      }
+
+      footer p {
+        font-size: 0.8rem;
+      }
+
+      .gpa-btn, .cgpa-btn {
+        font-size: 1rem;
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h1>CSE Department
+       GPA/CGPA CALCULATOR</h1>
+    <div class="author-info fade-in">
+      Created by 
+      <a href="https://prajinkumar-portfolio.vercel.app/" target="_blank">Prajin Kumar P - CSE Department</a>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/prajin.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/prajinkumar19/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="department-note">    This CGPA and GPA calculation is specific to the <strong>Computer Science Department</strong>.</p>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="button-container">
+      <button class="gpa-btn" onclick="window.location.href='./gpa-cse/gpamain.html'">GPA Calculator</button>
+      <button class="cgpa-btn" onclick="window.location.href='csecgpa.html'">CGPA Calculator</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Created by Prajin Kumar P - CSE Department</p>
+    <div class="social-icons fade-in">
+      <a href="https://www.instagram.com/prajin.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/prajinkumar19/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+ 
+</body>
+</html>
