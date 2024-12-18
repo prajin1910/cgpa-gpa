@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGPA Calculator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.0/scrollreveal.min.js"></script>
+  <style>
+
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  height: 100vh;            /* Full viewport height */
+  padding-top: 40px;        /* Adds space at the top */
+  padding-bottom: 80px;     /* Ensure footer is visible even if content is short */
+  flex-direction: column;
+}
+
+.content {
+  width: 100%;
+  max-width: 700px;
+  background: #1c1c1c;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+  margin: 20px; /* Adds some spacing around the container */
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #64ffda;
+  margin-bottom: 30px; /* Increased margin for more spacing */
+}
+
+.author-info {
+  margin-top: 30px; /* Increased margin for more spacing */
+  font-size: 1rem;
+  color: #bbb;
+  text-align: center;
+}
+
+.author-info a {
+  color: #64ffda;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.author-info a:hover {
+  color: #00e676;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Increased margin for more spacing */
+}
+
+.social-icons a {
+  color: #64ffda;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00e676;
+}
+
+.department-note {
+  font-size: 1rem;
+  color: #bbb;
+  text-align: center;
+  margin-top: 20px; /* Increased margin for more spacing */
+}
+
+.back-link {
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+  color: #64ffda;
+  text-decoration: none;
+  padding: 4px 8px;
+  margin-top: 15px;
+  border: 2px solid #64ffda;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #64ffda;
+  color: #121212;
+}
+
+form {
+  width: 100%;
+  margin-top: 30px; /* Increased margin for more spacing */
+}
+
+.semester {
+  position: relative;
+  margin-bottom: 30px; /* Increased margin for more spacing */
+  text-align: left;
+}
+
+.semester label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.input-container {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 40px; /* Adding space for the 'X' icon */
+  margin-bottom: 0;
+  border: 2px solid #64ffda;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #00e676;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #bbb;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px; /* Increased margin for more spacing */
+  align-items: center;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  width: 48%;
+  margin-top: 10px; /* Adds some space between buttons and other elements */
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.add-btn {
+  background-color: #5bc0de;
+  color: white;
+  border: none;
+}
+
+.add-btn:hover {
+  background-color: #31b0d5;
+}
+
+#result {
+  margin-top: 30px; /* Increased margin for more spacing */
+  font-size: 2rem;
+  color: #64ffda;
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+footer {
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: relative;
+  margin-top: auto;       /* Push footer to the bottom */
+}
+
+footer .social-icons {
+  margin: 10px 0;
+}
+
+footer .social-icons a {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    width: 45%;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .semester label {
+    font-size: 1rem;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+
+  footer .social-icons a {
+    font-size: 1.3rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>CGPA Calculator</h1>
+    <div class="author-info">
+      Created by 
+      <a href="https://prajinkumar-portfolio.vercel.app/" target="_blank">Prajin Kumar P - CSE Department</a>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/prajin.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/prajinkumar19/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <p class="department-note">This CGPA calculation is specific to the <strong>Computer Science Department</strong>.</p>
+
+    <!-- Link to 3rd Semester GPA Calculation -->
+    <a href="index.html" class="back-link">Go to Main Page 👆🏼</a>
+
+    <form id="cgpa-form">
+      <div id="semester-inputs"></div>
+      <div class="buttons-container">
+        <button type="button" id="add-semester" class="add-btn">Add Semester</button>
+        <button type="submit" class="submit-btn">Calculate CGPA</button>
+      </div>
+    </form>
+
+    <div id="result" class="result">
+      <h2>Your CGPA: <span id="cgpa">0.00</span></h2>
+    </div>
+  </div>
+  <footer>
+
+
+    <div class="author-info">
+        Created by 
+        <a href="https://prajinkumar-portfolio.vercel.app/" target="_blank">Prajin Kumar P - CSE Department</a>
+      </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("cgpa-form");
+      const addSemesterBtn = document.getElementById("add-semester");
+      const semesterInputs = document.getElementById("semester-inputs");
+      const result = document.getElementById("result");
+      const cgpaOutput = document.getElementById("cgpa");
+
+      const creditsPerSemester = [25, 24, 23, 25, 22, 21, 19, 15];
+      let currentSemester = 0;
+
+      function generateSemesterInput() {
+        if (currentSemester < creditsPerSemester.length) {
+          const semesterDiv = document.createElement("div");
+          semesterDiv.classList.add("semester");
+          semesterDiv.dataset.credits = creditsPerSemester[currentSemester];
+
+          semesterDiv.innerHTML = `
+            <label for="gpa-${currentSemester + 1}">GPA for Semester ${currentSemester + 1} (Credits: ${creditsPerSemester[currentSemester]}):</label>
+            <div class="input-container">
+              <input type="number" id="gpa-${currentSemester + 1}" class="gpa" min="0" max="10" step="0.01" required placeholder="Enter your GPA">
+            </div>
+            <span class="delete-icon" onclick="deleteSemester(this)">&#10006;</span>
+          `;
+
+          semesterInputs.appendChild(semesterDiv);
+          currentSemester++;
+        } else {
+          addSemesterBtn.style.display = "none";
+        }
+      }
+
+      generateSemesterInput();
+
+      addSemesterBtn.addEventListener("click", () => {
+        generateSemesterInput();
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        updateCGPA();
+      });
+
+      function updateCGPA() {
+        const gpas = document.querySelectorAll(".gpa");
+        const semesters = document.querySelectorAll(".semester");
+
+        let totalCredits = 0;
+        let weightedGpaSum = 0;
+
+        gpas.forEach((gpa, index) => {
+          const credits = parseInt(semesters[index].dataset.credits);
+          totalCredits += credits;
+          weightedGpaSum += parseFloat(gpa.value) * credits;
+        });
+
+        const cgpa = (weightedGpaSum / totalCredits).toFixed(2);
+
+        cgpaOutput.textContent = cgpa;
+        result.style.display = "block";
+      }
+
+      window.deleteSemester = function (element) {
+        element.closest(".semester").remove();
+        currentSemester--;
+        addSemesterBtn.style.display = currentSemester < creditsPerSemester.length ? "block" : "none";
+      };
+    });
+  </script>
+</body>
+</html>

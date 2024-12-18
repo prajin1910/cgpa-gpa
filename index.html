@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPA/CGPA Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Roboto', sans-serif;
+  background: #121212;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: auto; /* Allow scrolling */
+  margin-top: 30px;
+}
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 20px 0;
+      color: #64ffda;
+      text-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      background: #121212;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+      animation: fadeIn 1s ease-in-out;
+      margin-top: 10px;
+    }
+
+    .footer-container {
+      width: 100%;
+      margin: 20px 0;
+      text-align: center;
+      
+    }
+    .author-info {
+  margin-top: 120px; /* Increased margin for more spacing */
+  font-size: 1rem;
+  color: #bbb;
+  text-align: center;
+}
+
+.author-info a {
+  color: #64ffda;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.author-info a:hover {
+  color: #00e676;
+}
+    
+@media (max-width: 768px){
+    .author-info {
+        margin-top: 220px;
+    }
+    .container{
+        margin-top: 70px;
+    }
+}
+    .footer-container .author-info {
+      margin-top: 10px;
+      color: #64ffda;
+      font-size: 0.9rem;
+    }
+
+    .footer-container .author-info a {
+      color: #64ffda;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .button-container {
+  display: flex;
+  flex-direction: column; /* Arrange buttons vertically */
+  align-items: center; /* Center buttons horizontally */
+  gap: 15px; /* Space between buttons */
+  margin: 20px 0;
+}
+
+.action-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #64ffda;
+  text-decoration: none;
+  background: #1e1e1e;
+  border: 2px solid #64ffda;
+  border-radius: 8px;
+  width: 80%; /* Adjust width to make buttons uniform */
+  max-width: 300px; /* Set a maximum width */
+  min-width: 200px; /* Ensure enough space for text */
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis; /* Add ellipsis if text is too long */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.action-button:hover {
+  background-color: #64ffda;
+  color: #121212;
+  transform: translateY(-3px);
+}
+
+    .footer-container .author-info a:hover {
+      color: #00e676;
+    }
+
+    .footer-container .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .footer-container .social-icons a {
+      color: #64ffda;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-container .social-icons a:hover {
+      color: #00e676;
+    }
+    
+    .department-note {
+  font-size: 1.1rem;             /* Slightly larger font size */
+  color: #bbb;                  /* Light grey color */
+  text-align: center;           /* Center the text */
+  margin-top: 20px;             /* Space above the note */
+  margin-bottom: 20px;          /* Space below the note */
+  line-height: 1.5;             /* Increase line height for better readability */
+  font-weight: 400;             /* Normal font weight */
+}
+
+.department-note strong {
+  color: #64ffda;               /* Highlight the department name with a different color */
+  font-weight: bold;            /* Make the department name bold */
+}
+
+   
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+    <h1>CSE Calculator</h1>
+    <!-- Footer content below the buttons -->
+    <div class="footer-container">
+      <div class="author-info fade-in">
+        Created by 
+        <a href="https://prajinkumar-portfolio.vercel.app/" target="_blank">Prajin Kumar P - CSE Department</a>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/prajin.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/prajinkumar19/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="department-note">This CGPA & GPA calculation is specific to the <strong>Computer Science Department</strong>.</p>
+    
+
+    <!-- Buttons Section -->
+     <div class="container">
+    <div class="button-container">
+        <a href="./gpa-cse/gpamain.html" class="action-button">GPA Calculator</a>
+        <a href="csecgpa.html" class="action-button">CGPA Calculator</a>
+      </div>
+    </div>
+
+    <footer>
+
+
+        <div class="author-info">
+            Created by 
+            <a href="https://prajinkumar-portfolio.vercel.app/" target="_blank">Prajin Kumar P - CSE Department</a>
+          </div>
+      </footer>
+  </body>
+  
+  
+</html>
