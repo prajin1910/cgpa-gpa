@@ -169,10 +169,22 @@
         transform: scale(1);
       }
     }
+    h1 {
+    text-align: center; /* Centers the entire heading */
+    font-size: 2.5rem;  /* Adjust size as needed */
+  }
+
+  h1 .centered-line {
+    display: block; /* Ensures the second line is on a new line */
+    margin: 0 auto; /* Centers the second line */
+  }
   </style>
 </head>
 <body>
-    <h1>CGPA/GPA Calculator</h1>
+    <h1>
+    <span>CGPA/GPA</span>
+    <span class="centered-line">CALCULATOR</span>
+  </h1>
     <!-- Footer content below the buttons -->
     <div class="footer-container">
       <div class="author-info fade-in">
