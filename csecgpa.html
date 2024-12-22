@@ -21,12 +21,13 @@ body {
   background-color: #121212;
   color: #fff;
   display: flex;
-  justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
-  height: 100vh;            /* Full viewport height */
-  padding-top: 40px;        /* Adds space at the top */
-  padding-bottom: 80px;     /* Ensure footer is visible even if content is short */
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  min-height: 100vh;       /* Allow the body to grow */
+  margin: 0;               /* Remove default browser margin */
+  padding: 40px 0;         /* Add consistent top and bottom padding */
   flex-direction: column;
+  overflow-y: auto;        /* Enable vertical scrolling */
 }
 
 .content {
