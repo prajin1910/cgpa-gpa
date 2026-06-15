@@ -98,6 +98,46 @@
       display: none;
     }
 
+    .footer-container {
+      width: 100%;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .footer-container .author-info {
+      margin-top: 10px;
+      color: #64ffda;
+      font-size: 0.9rem;
+    }
+
+    .footer-container .author-info a {
+      color: #64ffda;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .footer-container .author-info a:hover {
+      color: #00e676;
+    }
+
+    .footer-container .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .footer-container .social-icons a {
+      color: #64ffda;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-container .social-icons a:hover {
+      color: #00e676;
+    }
+
     #loading {
       display: none;
       text-align: center;
@@ -109,6 +149,26 @@
       font-weight: bold;
       color: red;
       font-size: 0.9em;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 5px 10px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #64ffda;
+      text-decoration: none;
+      border: 2px solid #64ffda;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #64ffda;
+      color: #121212;
+      transform: translateY(-2px);
     }
 
     @keyframes fadeIn {
@@ -128,6 +188,18 @@
 
 <h1>GPA Calculator - Semester 5</h1>
 
+  <!-- Footer content below the heading -->
+  <div class="footer-container">
+    <div class="author-info fade-in">
+      Created by 
+      <a href="https://prajin-portfolio.vercel.app/" target="_blank">Prajin Kumar P - CSE Department</a>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/prajin.official/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/prajinkumar19/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+  <a href="gpamain.html" class="back-button fade-in">Back to Main Page 👈🏻</a>
 <div class="container">
   <form id="gpa-form">
 
@@ -245,6 +317,14 @@
   <div id="loading">Calculating...</div>
   <div id="result"></div>
 </div>
+
+<!-- Footer at the bottom of the page -->
+<footer class="footer-container">
+  <div class="author-info fade-in">
+    Created by 
+    <a href="https://prajin-portfolio.vercel.app/" target="_blank">Prajin Kumar P - CSE Department</a>
+  </div>
+</footer>
 
 <script>
   const form = document.getElementById("gpa-form");
