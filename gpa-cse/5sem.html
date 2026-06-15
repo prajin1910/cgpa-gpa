@@ -131,19 +131,6 @@
 <div class="container">
   <form id="gpa-form">
 
-    <label>Infosec Immersion :</label>
-    <select class="grade" required>
-      <option value="" disabled selected>Select Grade</option>
-      <option value="10">O</option>
-      <option value="9">A+</option>
-      <option value="8">A</option>
-      <option value="7">B+</option>
-      <option value="6">B</option>
-      <option value="5">C+</option>
-      <option value="4">C</option>
-      <option value="0">U</option>
-    </select>
-
     <label>Software Engineering and Design :</label>
     <select class="grade" required>
       <option value="" disabled selected>Select Grade</option>
@@ -196,7 +183,20 @@
       <option value="0">U</option>
     </select>
 
-    <label>Introduction to Women and Gender Studies :</label>
+    <label>Automation Theory and Compiler Design :</label>
+    <select class="grade" required>
+      <option value="" disabled selected>Select Grade</option>
+      <option value="10">O</option>
+      <option value="9">A+</option>
+      <option value="8">A</option>
+      <option value="7">B+</option>
+      <option value="6">B</option>
+      <option value="5">C+</option>
+      <option value="4">C</option>
+      <option value="0">U</option>
+    </select>
+
+    <label>UI/UX Design :</label>
     <select class="grade" required>
       <option value="" disabled selected>Select Grade</option>
       <option value="10">O</option>
@@ -235,45 +235,6 @@
       <option value="0">U</option>
     </select>
 
-    <label>Automation Theory and Compiler Design :</label>
-    <select class="grade" required>
-      <option value="" disabled selected>Select Grade</option>
-      <option value="10">O</option>
-      <option value="9">A+</option>
-      <option value="8">A</option>
-      <option value="7">B+</option>
-      <option value="6">B</option>
-      <option value="5">C+</option>
-      <option value="4">C</option>
-      <option value="0">U</option>
-    </select>
-
-    <label>Machine Learning Techniques :</label>
-    <select class="grade" required>
-      <option value="" disabled selected>Select Grade</option>
-      <option value="10">O</option>
-      <option value="9">A+</option>
-      <option value="8">A</option>
-      <option value="7">B+</option>
-      <option value="6">B</option>
-      <option value="5">C+</option>
-      <option value="4">C</option>
-      <option value="0">U</option>
-    </select>
-
-    <label>UI/UX Design :</label>
-    <select class="grade" required>
-      <option value="" disabled selected>Select Grade</option>
-      <option value="10">O</option>
-      <option value="9">A+</option>
-      <option value="8">A</option>
-      <option value="7">B+</option>
-      <option value="6">B</option>
-      <option value="5">C+</option>
-      <option value="4">C</option>
-      <option value="0">U</option>
-    </select>
-
     <div class="button-container">
       <button type="button" class="calculate-btn" id="calculate">Calculate GPA</button>
       <button type="reset" class="reset-btn">Reset</button>
@@ -291,7 +252,7 @@
   const loadingDiv = document.getElementById("loading");
 
   // FINAL CREDIT ARRAY (MATCHES MARKSHEET)
-  const creditArray = [2, 3, 3, 3, 3, 0, 2, 2, 3, 2, 3];
+  const creditArray = [3, 3, 3, 3, 3, 3, 2, 2];
 
   document.getElementById("calculate").addEventListener("click", function () {
     loadingDiv.style.display = "block";
